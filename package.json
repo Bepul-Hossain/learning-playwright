@@ -1,5 +1,21 @@
 {
+  "name": "learning-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bepul-Hossain/learning-playwright.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bepul-Hossain/learning-playwright/issues"
+  },
+  "homepage": "https://github.com/Bepul-Hossain/learning-playwright#readme",
   "devDependencies": {
-    "playwright": "^1.20.1"
+    "@playwright/test": "^1.20.1"
   }
 }
