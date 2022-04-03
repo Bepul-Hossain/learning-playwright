@@ -5,6 +5,8 @@ npm run test
 npm run show-report
 //Open Playwright Inspector
 PWDEBUG=1 npm run test
+// codegen mode generated script
+npx playwright codegen wikipedia.org
 
 //Run all the tests
 npx playwright test

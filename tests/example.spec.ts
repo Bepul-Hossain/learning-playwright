@@ -1,18 +1,26 @@
 import { test, expect } from '@playwright/test';
-
-test('my test', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-
-  // Expect an attribute "to be strictly equal" to the value.
-  await expect(page.locator('text=Get Started').first()).toHaveAttribute('href', '/docs/intro');
-  await page.pause();
-  await page.screenshot({ path: "screenshot.png" });
-  await page.click('text=Get Started');
-  // Expect some text to be visible on the page.
-  await expect(page.locator('text=Introduction').first()).toBeVisible();
+test('test', async ({ page }) => {
+  // Go to https://www.wikipedia.org/
+  await page.goto('https://www.wikipedia.org/');
+  // Click strong:has-text("English")
+  await page.locator('strong:has-text("English")').click();
+  await expect(page).toHaveURL('https://en.wikipedia.org/wiki/Main_Page');
+  // Click div[role="main"] >> text=MediaWiki
+  await page.locator('div[role="main"] >> text=MediaWiki').click();
+  await expect(page).toHaveURL('https://www.mediawiki.org/wiki/MediaWiki');
+  // Click text=MediaWiki Stakeholders
+  await Promise.all([
+    page.waitForNavigation(/*{ url: 'https://www.mediawiki.org/wiki/MediaWiki_Stakeholders%27_Group' }*/),
+    page.locator('text=MediaWiki Stakeholders').click()
+  ]);
+  // Click text=mission
+  await Promise.all([
+    page.waitForNavigation(/*{ url: 'https://www.mediawiki.org/wiki/MediaWiki_Stakeholders%27_Group/Mission' }*/),
+    page.locator('text=mission').click()
+  ]);
+  // Click text=View history
+  await page.locator('text=View history').click();
+  await expect(page).toHaveURL('https://www.mediawiki.org/w/index.php?title=MediaWiki_Stakeholders%27_Group/Mission&action=history');
 });
 
 
