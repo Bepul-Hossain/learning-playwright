@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/Bepul-Hossain/learning-playwright#readme",
   "devDependencies": {
-    "@playwright/test": "^1.20.1"
+    "@playwright/test": "^1.20.2"
   }
 }
