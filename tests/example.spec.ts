@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 test('test', async ({ page, context }) => {
-
+  console.log("example test running");
   await context.tracing.start({ snapshots: true, screenshots: true });
 
   // Go to https://www.wikipedia.org/
@@ -26,7 +26,7 @@ test('test', async ({ page, context }) => {
   await expect(page).toHaveURL('https://www.mediawiki.org/w/index.php?title=MediaWiki_Stakeholders%27_Group/Mission&action=history');
 
   await context.tracing.stop({ path: "example-trace.zip" });
-
+  console.log("example test done");
 });
 
 

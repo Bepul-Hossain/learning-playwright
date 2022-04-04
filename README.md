@@ -43,3 +43,8 @@ npx playwright show-trace ./example-trace.zip
 //When navigating to trace.playwright.dev, you can upload trace files using drag and drop.
 https://trace.playwright.dev/
 ```
+
+```
+//annotations
+//https://www.youtube.com/watch?v=l61cgSImhpU
+```
