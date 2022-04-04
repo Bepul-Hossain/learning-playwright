@@ -35,7 +35,11 @@ npx playwright show-report
 
 ```
 ```
+//https://www.youtube.com/watch?v=A_uvbTFctN4
 //Trace Viewer
 npm run test
 npx playwright show-trace ./example-trace.zip
+
+//When navigating to trace.playwright.dev, you can upload trace files using drag and drop.
+https://trace.playwright.dev/
 ```
