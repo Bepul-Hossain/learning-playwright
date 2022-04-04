@@ -34,3 +34,8 @@ npx playwright test --help
 npx playwright show-report
 
 ```
+```
+//Trace Viewer
+npm run test
+npx playwright show-trace ./example-trace.zip
+```

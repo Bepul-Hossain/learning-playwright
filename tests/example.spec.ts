@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
-test('test', async ({ page }) => {
+test('test', async ({ page, context }) => {
+
+  await context.tracing.start({ snapshots: true, screenshots: true });
+
   // Go to https://www.wikipedia.org/
   await page.goto('https://www.wikipedia.org/');
   // Click strong:has-text("English")
@@ -21,6 +24,9 @@ test('test', async ({ page }) => {
   // Click text=View history
   await page.locator('text=View history').click();
   await expect(page).toHaveURL('https://www.mediawiki.org/w/index.php?title=MediaWiki_Stakeholders%27_Group/Mission&action=history');
+
+  await context.tracing.stop({ path: "example-trace.zip" });
+
 });
 
 
